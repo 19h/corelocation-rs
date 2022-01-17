@@ -45,7 +45,7 @@ pub struct Location {
 }
 
 impl LocInfo {
-    fn new() -> Self {
+    pub fn new() -> Self {
         unsafe { bindings::run() }
     }
 }
@@ -63,7 +63,7 @@ impl Locator for Location {
 }
 
 impl Location {
-    fn from_os() -> LocationResult {
+    pub fn from_os() -> LocationResult {
         let l = LocInfo::new();
 
         match l.status {
